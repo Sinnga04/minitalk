@@ -26,15 +26,10 @@ To ensure seamless communication, a simple message encoding and decoding protoco
 
 Reliability is a crucial aspect of any communication system. MiniTalk includes error-handling mechanisms to deal with issues such as signal loss or misinterpretation, ensuring a robust communication channel.
 
-## Getting Started
 
-### Prerequisites
+### To test the project
 
-- Ensure you have a C compiler installed (e.g., GCC).
-
-### Building and Running
-
-1. Clone the repository:
+Clone the repository:
 
    ```bash
    git clone https://github.com/your-username/minitalk.git
