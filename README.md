@@ -1,42 +1,40 @@
-Minitalk Project README
-Overview
-This project entails creating a communication program involving a client and a server. Communication between these components is exclusively achieved through UNIX signals. The server must be initiated first, displaying its process ID (PID). The client, accepting two parameters – the server PID and a string to send – interacts with the server by transmitting the specified string. Upon receiving the string, the server prints it.
+# MiniTalk Project
 
-Project Structure
-Executable Files
-client: Executable file for the client.
-server: Executable file for the server.
-Makefile
-Include a Makefile for seamless compilation. The Makefile should compile source files without relinking.
+## Overview
 
-Mandatory Part
-Server Launch
+Welcome to the MiniTalk Project! This project is a simple interprocess communication application implemented in C using the MiniTalk protocol. It provides a lightweight communication mechanism between processes using signals.
 
-The server must be launched first, printing its PID.
-Client Parameters
+## Features
 
-The client requires two parameters:
-The server PID.
-The string to send.
-String Communication
+- **Signal Communication:** Implement communication between processes using signals.
+- **Message Encoding:** Develop a protocol for encoding and decoding messages.
+- **Reliable Communication:** Enhance communication reliability and error handling.
 
-The client transmits the specified string to the server.
-Upon receiving the string, the server promptly prints it.
-Quick Display
+## Project Details
 
-The server should rapidly display the received string.
-Bit-Shifting Explanation
-To implement signal communication, bit-shifting can encode and decode information in signals. A loop can iterate through the bits of each character, sending specific signals for 0 or 1.
+MiniTalk is designed to facilitate communication between different processes on a Unix-like operating system. It leverages the use of signals to transmit messages between a server and multiple client processes. This lightweight approach allows for quick and efficient interprocess communication.
 
-Sending a String (Client)
-Obtain the server's PID and the string to send.
-Iterate through each character in the string.
-For each character, iterate through its bits.
-Send SIGUSR1 or SIGUSR2 signals to the server for each bit.
-Utilize the kill function to send signals.
-Receiving and Printing (Server)
-Set up signal handlers using sigaction for SIGUSR1 and SIGUSR2.
-Decode the received signals, reconstructing bits.
-Convert bits back to characters.
-Print the received string.
-This process ensures signal communication using bit-shifting. Adjust timing and error handling to meet project requirements.
+### Signal Communication
+
+The core of MiniTalk relies on the use of signals for communication. The server and clients exchange signals to convey messages, and each signal corresponds to a specific piece of information.
+
+### Message Encoding
+
+To ensure seamless communication, a simple message encoding and decoding protocol have been implemented. Messages are encoded into signals, transmitted between processes, and then decoded to extract the original message.
+
+### Reliable Communication
+
+Reliability is a crucial aspect of any communication system. MiniTalk includes error-handling mechanisms to deal with issues such as signal loss or misinterpretation, ensuring a robust communication channel.
+
+## Getting Started
+
+### Prerequisites
+
+- Ensure you have a C compiler installed (e.g., GCC).
+
+### Building and Running
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/minitalk.git
